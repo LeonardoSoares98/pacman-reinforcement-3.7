@@ -59,12 +59,12 @@ def question3e():
     return answerDiscount, answerNoise, answerLivingReward
     # If not possible, return 'NOT POSSIBLE'
 
-def question6():
+def question8():
     answerEpsilon = None
     answerLearningRate = None
     #return answerEpsilon, answerLearningRate
     # If not possible, return 'NOT POSSIBLE'
-
+    
     if answerEpsilon != None and answerLearningRate != None:
         return answerEpsilon, answerLearningRate
     else:
@@ -75,4 +75,4 @@ if __name__ == '__main__':
     import analysis
     for q in [q for q in dir(analysis) if q.startswith('question')]:
         response = getattr(analysis, q)()
-        print(('  Question %s:\t%s' % (q, str(response))))
+        print('  Question %s:\t%s' % (q, str(response)))

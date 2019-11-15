@@ -42,7 +42,7 @@ class QLearningAgent(ReinforcementAgent):
         "You can initialize Q-values here..."
         ReinforcementAgent.__init__(self, **args)
 
-        "*** MY CODE HERE ***"
+        "*** YOUR CODE HERE ***"
         self.values = util.Counter()
 
     def getQValue(self, state, action):
@@ -51,10 +51,8 @@ class QLearningAgent(ReinforcementAgent):
           Should return 0.0 if we have never seen a state
           or the Q node value otherwise
         """
-        "*** MY CODE HERE ***"
-
+        "*** YOUR CODE HERE ***"
         return self.values[(state, action)]
-
         #util.raiseNotDefined()
 
 
@@ -65,8 +63,7 @@ class QLearningAgent(ReinforcementAgent):
           there are no legal actions, which is the case at the
           terminal state, you should return a value of 0.0.
         """
-        "*** MY CODE HERE ***"
-
+        "*** YOUR CODE HERE ***"
         legalActions = self.getLegalActions(state)
         if len(legalActions) != 0:
             qValues = []
@@ -85,8 +82,7 @@ class QLearningAgent(ReinforcementAgent):
           are no legal actions, which is the case at the terminal state,
           you should return None.
         """
-        "*** MY CODE HERE ***"
-
+        "*** YOUR CODE HERE ***"
         legalActions = self.getLegalActions(state)
 
         if len(legalActions) != 0:
@@ -119,8 +115,7 @@ class QLearningAgent(ReinforcementAgent):
         # Pick Action
         legalActions = self.getLegalActions(state)
         action = None
-        "*** MY CODE HERE ***"
-
+        "*** YOUR CODE HERE ***"
         if len(legalActions) == 0:
             return action
         else:
@@ -129,7 +124,6 @@ class QLearningAgent(ReinforcementAgent):
             return action
 
         #util.raiseNotDefined()
-
 
     def update(self, state, action, nextState, reward):
         """
@@ -140,7 +134,7 @@ class QLearningAgent(ReinforcementAgent):
           NOTE: You should never call this function,
           it will be called on your behalf
         """
-        "*** MY CODE HERE ***"
+        "*** YOUR CODE HERE ***"
         gamma = self.discount
         alpha = self.alpha
 
@@ -210,8 +204,7 @@ class ApproximateQAgent(PacmanQAgent):
           Should return Q(state,action) = w * featureVector
           where * is the dotProduct operator
         """
-        "*** MY CODE HERE ***"
-
+        "*** YOUR CODE HERE ***"
         featuresList = self.featExtractor.getFeatures(state, action)
         qFunction = []
 
@@ -227,8 +220,7 @@ class ApproximateQAgent(PacmanQAgent):
         """
            Should update your weights based on transition
         """
-        "*** MY CODE HERE ***"
-
+        "*** YOUR CODE HERE ***"
         featuresList = self.featExtractor.getFeatures(state, action)
 
         alpha = self.alpha
@@ -251,5 +243,5 @@ class ApproximateQAgent(PacmanQAgent):
         # did we finish training?
         if self.episodesSoFar == self.numTraining:
             # you might want to print your weights here for debugging
-            #"*** YOUR CODE HERE ***"
+            "*** YOUR CODE HERE ***"
             pass
